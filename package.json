@@ -11,8 +11,13 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@imagekit/javascript": "^5.3.0",
+    "@imagekit/react": "^5.0.2",
     "@supabase/supabase-js": "^2.105.2",
     "gsap": "^3.15.0",
+    "imagekit": "^6.0.0",
+    "imagekit-javascript": "^4.0.1",
+    "imagekitio-react": "^4.3.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-router": "^7.15.0",

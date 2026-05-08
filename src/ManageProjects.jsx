@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import supabase from './lib/supabase';
+import { imagekit } from './lib/imagekit';
 
 const ManageProjects = () => {
   const [projects, setProjects] = useState([]);
@@ -37,16 +38,12 @@ const ManageProjects = () => {
       let thumbnail_url = '';
 
       if (imageFile) {
-        const fileExt = imageFile.name.split('.').pop();
-        const fileName = `${Math.random()}.${fileExt}`;
-        const { error: uploadError } = await supabase.storage
-          .from('portfolio')
-          .upload(fileName, imageFile);
-
-        if (uploadError) throw uploadError;
-
-        const { data: urlData } = supabase.storage.from('portfolio').getPublicUrl(fileName);
-        thumbnail_url = urlData.publicUrl;
+        const response = await imagekit.upload({
+          file: imageFile,
+          fileName: imageFile.name,
+          folder: "/portfolio"
+        });
+        thumbnail_url = response.url;
       }
 
       const { error } = await supabase.from('projects').insert([
