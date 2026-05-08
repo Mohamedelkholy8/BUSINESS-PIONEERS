@@ -2,23 +2,26 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import languageData from './language.json';
+import img1 from './assets/goalCardsImg1.avif'
+import img2 from './assets/goalCardsImg2.avif'
+import img3 from './assets/goalCardsImg.avif'
 
 gsap.registerPlugin(ScrollTrigger);
 
 const goalsData = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+    image: img1,
     imagePosition: "left"
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+    image: img2,
     imagePosition: "right"
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3cae10c3?w=800&q=80",
+    image: img3,
     imagePosition: "left"
   }
 ];
