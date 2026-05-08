@@ -45,7 +45,7 @@ const ManageProjects = () => {
         const uploadFormData = new FormData();
         uploadFormData.append("file", imageFile);
         uploadFormData.append("fileName", imageFile.name);
-        uploadFormData.append("publicKey", import.meta.env.VITE_IMAGEKIT_PUBLIC_KEY);
+        uploadFormData.append("publicKey", "public_jpkAIzsnHs3m7QooYnpY0WYnJv4=");
         uploadFormData.append("signature", authData.signature);
         uploadFormData.append("expire", authData.expire);
         uploadFormData.append("token", authData.token);
