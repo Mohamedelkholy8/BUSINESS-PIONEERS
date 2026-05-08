@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import supabase from './lib/supabase';
-import { imagekit } from './lib/imagekit';
+import { authenticator } from './lib/imagekit';
 
 const ManageProjects = () => {
   const [projects, setProjects] = useState([]);
@@ -38,12 +38,31 @@ const ManageProjects = () => {
       let thumbnail_url = '';
 
       if (imageFile) {
-        const response = await imagekit.upload({
-          file: imageFile,
-          fileName: imageFile.name,
-          folder: "/portfolio"
+        // 1. Get Auth Parameters manually
+        const authData = await authenticator();
+
+        // 2. Prepare Direct API Upload
+        const uploadFormData = new FormData();
+        uploadFormData.append("file", imageFile);
+        uploadFormData.append("fileName", imageFile.name);
+        uploadFormData.append("publicKey", import.meta.env.VITE_IMAGEKIT_PUBLIC_KEY);
+        uploadFormData.append("signature", authData.signature);
+        uploadFormData.append("expire", authData.expire);
+        uploadFormData.append("token", authData.token);
+        uploadFormData.append("folder", "/portfolio");
+
+        const uploadResponse = await fetch("https://upload.imagekit.io/api/v1/files/upload", {
+          method: "POST",
+          body: uploadFormData,
         });
-        thumbnail_url = response.url;
+
+        if (!uploadResponse.ok) {
+          const errorText = await uploadResponse.text();
+          throw new Error(`Upload failed: ${errorText}`);
+        }
+
+        const uploadResult = await uploadResponse.json();
+        thumbnail_url = uploadResult.url;
       }
 
       const { error } = await supabase.from('projects').insert([
