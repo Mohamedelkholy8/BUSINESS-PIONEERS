@@ -50,7 +50,7 @@ function UserLayout() {
         opacity: 0,
         duration: 0.6,
         ease: "power2.out"
-      }, "-=0.2"); // Start much later, near the end of the expansion
+      }, "+=0.2"); // Start much later, near the end of the expansion
     } else {
       // If not on home, just show it
       gsap.set('.nav-container', { y: 0, opacity: 1 });
