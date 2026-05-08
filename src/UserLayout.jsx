@@ -48,9 +48,9 @@ function UserLayout() {
       }, "-=0.4")
       .from('.nav-links, .nav-lang', {
         opacity: 0,
-        duration: 0.6,
+        duration: 0.8,
         ease: "power2.out"
-      }, "-=0.6");
+      }, "-=0.8"); // Start deeper into the width expansion
     } else {
       // If not on home, just show it
       gsap.set('.nav-container', { y: 0, opacity: 1 });
