@@ -1,0 +1,75 @@
+body {
+    font-family: 'Playfair Display', serif;
+}
+.bg-main{
+    background-color:#C9B59C ;
+}
+.bg-second{
+    background-color: #D9CFC7;
+}
+.bg-third{
+    background-color: #EFE9E3;
+}
+.bg-fourth{
+    background-color: #111111;
+}
+.bg-fifth{
+    background-color:#EFE9E3 ;
+}
+.text-main{
+    color: #C9B59C;
+}
+.text-second{
+    color: #D9CFC7;
+}
+.text-third{
+    color: #EFE9E3;
+}
+.text-fourth{
+    color: #111111;
+}
+.text-fifth{
+    color: #EFE9E3;
+}
+
+/* Premium Button Effects */
+.btn-premium {
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-premium:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.btn-premium:hover::before {
+    left: 100%;
+}
+
+.btn-shopping:hover {
+    background-color: #EFE9E3;
+    color: #111111;
+}
+
+.btn-contact:hover {
+    background-color: #C9B59C;
+    color: #111111;
+}

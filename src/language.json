@@ -1,0 +1,90 @@
+{
+    "en": {
+        "nav": {
+            "Home": "Home",
+            "About": "About",
+            "Services": "Services",
+            "ContactUs": "Contact Us",
+            "AR": "AR",
+            "ServicesList": ["Projects", "Portfolio", "Certifications & Legal", "Careers", "Company Profile"],
+            "PrivacyTerms": "Privacy / Terms",
+            "Menu": "Menu"
+        },
+        "hero": {
+            "title": "BUSINESS",
+            "pioneers": " PIONEERS",
+            "holding": "Holding",
+            "subtitle": "We Build the Future with Integrated Solutions",
+            "shopping": "Shopping",
+            "contact": "Contact Us"
+        },
+        "companyNumbers": {
+            "title": "We offer integration in business",
+            "desc": "Business Pioneers combines Engineering, Trade, Industry, and Services with a strategic integration that enhances the efficiency and quality of projects.",
+            "clients": "Clients Trust Us",
+            "years": "Years of Experience"
+        },
+        "goals": {
+            "our": "OUR",
+            "goals": "GOALS",
+            "cards": [
+                {
+                    "title": "Deliver High-Quality Projects",
+                    "description": "Ensure every project meets the highest standards in construction, finishing, and design, with a strong focus on durability, precision, and client satisfaction."
+                },
+                {
+                    "title": "Strengthen Engineering Excellence",
+                    "description": "Continuously enhance our engineering capabilities through innovation, technical expertise, and efficient project execution to deliver reliable and optimized solutions."
+                },
+                {
+                    "title": "Build Long-Term Client Partnerships",
+                    "description": "Establish lasting relationships based on trust, transparency, and consistent performance, positioning the company as a preferred partner in the construction sector."
+                }
+            ]
+        }
+    },
+    "ar": {
+        "nav": {
+            "Home": "الرئيسية",
+            "About": "من نحن",
+            "Services": "الخدمات",
+            "ContactUs": "اتصل بنا",
+            "AR": "EN",
+            "ServicesList": ["المشاريع", "الأعمال", "الشهادات والقانونية", "الوظائف", "ملف الشركة"],
+            "PrivacyTerms": "الخصوصية / الشروط",
+            "Menu": "القائمة"
+        },
+        "hero": {
+            "title": "BUSINESS",
+            "pioneers": " PIONEERS",
+            "holding": "Holding",
+            "subtitle": "نبني المستقبل بحلول متكاملة",
+            "shopping": "التسوق",
+            "contact": "اتصل بنا"
+        },
+        "companyNumbers": {
+            "title": "نحن نقدم التكامل في الأعمال",
+            "desc": "تجمع شركة رواد الأعمال بين الهندسة والتجارة والصناعة والخدمات بتكامل استراتيجي يعزز كفاءة وجودة المشاريع.",
+            "clients": "عملاء يثقون بنا",
+            "years": "سنوات من الخبرة"
+        },
+        "goals": {
+            "our": "أهدافنا",
+            "goals": "",
+            "cards": [
+                {
+                    "title": "تقديم مشاريع عالية الجودة",
+                    "description": "ضمان تلبية كل مشروع لأعلى المعايير في البناء والتشطيب والتصميم، مع التركيز القوي على المتانة والدقة ورضا العملاء."
+                },
+                {
+                    "title": "تعزيز التميز الهندسي",
+                    "description": "تعزيز قدراتنا الهندسية باستمرار من خلال الابتكار والخبرة الفنية والتنفيذ الفعال للمشاريع لتقديم حلول موثوقة ومحسنة."
+                },
+                {
+                    "title": "بناء شراكات طويلة الأمد مع العملاء",
+                    "description": "إقامة علاقات دائمية قائمة على الثقة والشفافية والأداء المتسق، مما يضع الشركة كشريك مفضل في قطاع البناء."
+                }
+            ]
+        }
+    }
+}
