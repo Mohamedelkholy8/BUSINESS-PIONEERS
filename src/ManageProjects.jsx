@@ -57,7 +57,8 @@ const ManageProjects = () => {
       setImageFile(null);
       fetchProjects();
     } catch (error) {
-      alert(error.message);
+      console.error("Upload Error Details:", error);
+      alert(`Upload failed: ${error.message || 'Unknown error'}`);
     } finally {
       setLoading(false);
     }
