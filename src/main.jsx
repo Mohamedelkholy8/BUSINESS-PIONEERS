@@ -14,7 +14,7 @@ import ManageProjects from './ManageProjects';
 import AdminDashboard from './AdminDashboard';
 import ManageApplications from './ManageApplications';
 import ManageOrders from './ManageOrders';
-import AdminSettings from './ManageSettings';
+import ManageSettings from './ManageSettings';
 import UserLayout from './UserLayout';
 import Portfolio from './Portfolio';
 import Certifications from './Certifications';
