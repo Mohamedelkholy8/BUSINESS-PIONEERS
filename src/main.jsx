@@ -14,7 +14,8 @@ import ManageProjects from './ManageProjects';
 import AdminDashboard from './AdminDashboard';
 import ManageApplications from './ManageApplications';
 import ManageOrders from './ManageOrders';
-import ManageSettings from './ManageSettings';
+import AdminSettings from './ManageSettings';
+import UserLayout from './UserLayout';
 import Portfolio from './Portfolio';
 import Certifications from './Certifications';
 import Careers from './Careers';
@@ -48,19 +49,20 @@ function Layout() {
       
       <div>
         <Routes>
-          {/* Public Routes */}
-          <Route path="/" element={<App />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/certifications" element={<Certifications />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/contact" element={<Contact />} />
+          {/* Public User Routes with Nav & Footer */}
+          <Route element={<UserLayout />}>
+            <Route path="/" element={<App />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/certifications" element={<Certifications />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/contact" element={<Contact />} />
+          </Route>
           
-          {/* Admin Login - Keep it separate from protected routes */}
-          {/* Admin Login - Commented out until component exists */}
+          {/* Admin Login - Keep it separate from both layouts */}
           <Route path="/admin-login" element={<AdminLogin />} />
 
           {/* Protected Admin Section */}

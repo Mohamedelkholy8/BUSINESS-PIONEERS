@@ -10,6 +10,11 @@
             "PrivacyTerms": "Privacy / Terms",
             "Menu": "Menu"
         },
+        "projects": {
+            "title": "Our Projects",
+            "subtitle": "Engineering · Excellence · Innovation",
+            "noFound": "No projects found."
+        },
         "hero": {
             "title": "BUSINESS",
             "pioneers": " PIONEERS",
@@ -53,6 +58,11 @@
             "ServicesList": ["المشاريع", "الأعمال", "الشهادات والقانونية", "الوظائف", "ملف الشركة"],
             "PrivacyTerms": "الخصوصية / الشروط",
             "Menu": "القائمة"
+        },
+        "projects": {
+            "title": "مشاريعنا",
+            "subtitle": "الهندسة · التميز · الابتكار",
+            "noFound": "لم يتم العثور على مشاريع."
         },
         "hero": {
             "title": "BUSINESS",

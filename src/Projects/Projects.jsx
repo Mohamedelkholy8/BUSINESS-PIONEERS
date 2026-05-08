@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import supabase from './../lib/supabase';
+import { useOutletContext } from 'react-router-dom';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
+  const { t } = useOutletContext();
 
   useEffect(() => {
     fetchProjects();
@@ -20,8 +22,8 @@ const Projects = () => {
     <div className="max-w-7xl mx-auto px-6 py-24">
       {/* Header */}
       <div className="mb-16">
-        <h1 className="text-5xl md:text-6xl font-light tracking-tight text-black mb-4">Our Projects</h1>
-        <p className="text-gray-500 text-sm uppercase tracking-[0.3em]">Engineering · Excellence · Innovation</p>
+        <h1 className="text-5xl md:text-6xl font-light tracking-tight text-black mb-4">{t.projects.title}</h1>
+        <p className="text-gray-500 text-sm uppercase tracking-[0.3em]">{t.projects.subtitle}</p>
       </div>
 
       {/* Grid List */}
@@ -54,7 +56,7 @@ const Projects = () => {
 
       {projects?.length === 0 && (
         <div className="text-center py-20 border border-dashed border-gray-200 rounded-3xl">
-          <p className="text-gray-400">No projects found.</p>
+          <p className="text-gray-400">{t.projects.noFound}</p>
         </div>
       )}
     </div>
