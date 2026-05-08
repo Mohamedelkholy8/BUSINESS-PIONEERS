@@ -1,4 +1,4 @@
-import ImageKit from "imagekit";
+import crypto from "crypto";
 
 export default function handler(request, response) {
   // CORS Headers
@@ -12,26 +12,25 @@ export default function handler(request, response) {
     return;
   }
 
-  // Use .trim() to prevent hidden space/newline issues
-  const publicKey = (process.env.VITE_IMAGEKIT_PUBLIC_KEY || "").trim();
   const privateKey = (process.env.IMAGEKIT_PRIVATE_KEY || "").trim();
-  const urlEndpoint = (process.env.VITE_IMAGEKIT_URL_ENDPOINT || "").trim();
-
-  if (!publicKey || !privateKey) {
-    return response.status(500).json({ error: "Missing ImageKit Keys in Environment" });
+  
+  if (!privateKey) {
+    return response.status(500).json({ error: "Private Key missing in Vercel" });
   }
 
-  const imagekit = new ImageKit({
-    publicKey,
-    privateKey,
-    urlEndpoint,
+  // Generate parameters manually
+  const token = crypto.randomBytes(16).toString("hex");
+  const expire = Math.floor(Date.now() / 1000) + 2400; // 40 minutes from now
+
+  // Manual HMAC-SHA1 signature generation
+  const signature = crypto
+    .createHmac("sha1", privateKey)
+    .update(token + expire.toString())
+    .digest("hex");
+
+  response.status(200).json({
+    token,
+    expire,
+    signature
   });
-
-  try {
-    const authenticationParameters = imagekit.getAuthenticationParameters();
-    response.status(200).json(authenticationParameters);
-  } catch (error) {
-    console.error("Auth Error:", error);
-    response.status(500).json({ error: "Failed to generate signature" });
-  }
 }
